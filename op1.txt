@@ -1,0 +1,20 @@
+%include "function.asm"
+SECTION .text
+global _start
+_start:
+	add eax,ebx 
+	add eax,ecx
+	call iprintLF
+	div eax,30	
+	add eax,ebx 
+	add eax,ecx
+	call iprintLF
+	div eax,300	
+	call iprintLF
+	div eax,3	
+	mul eax,100
+	mul ebx,100
+	sub eax,4
+	sub eax,4
+	call iprintLF
+	call quit

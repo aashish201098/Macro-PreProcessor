@@ -1,0 +1,24 @@
+MBEGIN @add &p1,&p2,&p3
+	mov eax,?0 
+	add eax,?1 
+	add eax,?2
+	call iprintLF
+MEND
+MBEGIN @sub &d1,&d2,&d3
+	mov eax,?0
+	sub eax,?1
+	sub eax,?2
+	call iprintLF
+MEND
+MBEGIN @add &p1,&p2,&p3
+	mov eax,?0 
+	add eax,?1 
+	add eax,?2
+	call iprintLF
+MEND
+MBEGIN @sub &d1,&d2,&d3
+	mov eax,?0
+	sub eax,?1
+	sub eax,?2
+	call iprintLF
+MEND

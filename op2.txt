@@ -1,0 +1,12 @@
+%include "function.asm"
+SECTION .text
+global _start
+_start:
+	add ebx,5
+	add ebx,eax
+	add eax,6
+	add eax,6
+	add eax,5
+mov eax,ebx
+mov ebx,40
+	call quit

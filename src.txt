@@ -1,0 +1,34 @@
+%include "function.asm"
+
+MBEGIN @add &p1,&p2,&p3
+	
+	mov eax,&p1 
+	!! move in eax
+	add eax,&p2 
+	!! add ebx
+	add eax,&p3
+	!! add ecx
+	call iprintLF
+	
+MEND
+
+MBEGIN @sub &d1,&d2,&d3
+	mov eax,&d1
+	!! move in eax
+	sub eax,&d2
+	!! sub 
+	sub eax,&d3
+	call iprintLF
+MEND
+
+SECTION .text
+
+global _start
+
+_start:
+	@add 10,,
+	@sub 80,5,4
+	@add 40,50,60
+	@sub 100,90,2
+	@add 60,70,80
+	call quit

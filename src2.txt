@@ -1,0 +1,29 @@
+%include "function.asm"
+
+MBEGIN @add &p1,&p2
+	IF ( &p1 EQ 10 )
+	add ebx,&p1
+	add eax,ebx
+	ELSE
+	add ebx,&p2
+	add ebx,eax
+	ENDIF
+	WHILE ( &p1 GT &p2 )
+	add eax,&p1
+	DCR
+	ENDW
+	add eax,&p1
+	add eax,&p2
+MEND	
+DEFINE @@loada mov eax,ebx 
+DEFINE @@loadb &p1 mov ebx,&p1
+
+SECTION .text
+
+global _start
+
+_start:
+	@add 6,5
+	@@loada
+	@@loadb 40
+	call quit

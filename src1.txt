@@ -1,0 +1,41 @@
+%include "function.asm"
+
+MBEGIN @add &p1=1,&p2=3,&p3=3
+	 
+	!! move in eax
+	add eax,ebx 
+	!! add ebx
+	add eax,ecx
+	call iprintLF
+	MBEGIN @div &p1=1,&p2=3,&p3=3
+	div eax,&p3	
+	MEND
+MEND
+
+
+MBEGIN @mul &p1=100,&p2=100,&p3=100
+	mul eax,&p1
+	mul ebx,&p2
+MEND
+
+MBEGIN @sub &p1=4,&p2=4,&p3=4
+	sub eax,&p1
+	!! move in eax
+	sub eax,&p2
+	call iprintLF
+MEND	
+	
+
+SECTION .text
+
+global _start
+
+_start:
+	@add 10,20,30
+	@add 100,200,300
+	call iprintLF
+	
+	@div ,,
+	@mul ,,
+	@sub ,,
+	call quit

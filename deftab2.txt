@@ -1,0 +1,17 @@
+MBEGIN @add &p1,&p2
+	IF ( ?0 EQ 10 )
+	add ebx,?0
+	add eax,ebx
+	ELSE
+	add ebx,?1
+	add ebx,eax
+	ENDIF
+	WHILE ( ?0 GT ?1 )
+	add eax,?0
+	DCR
+	ENDW
+	add eax,?0
+	add eax,?1
+MEND	
+DEFINE @@loada mov eax,ebx 
+DEFINE @@loadb &p1 mov ebx,?0
